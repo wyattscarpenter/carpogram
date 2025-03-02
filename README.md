@@ -18,17 +18,23 @@ ASCII punctuation
 
 normal punctuation (including interobang and perconitination point)
 
-combining italicizer, obliqueizer, reverse obliqueizer, rotator(?) boldizer, superscriptizer (this one can stack, to make 2^2^2), subscriptizer (same), strikethough (also stacks, to get, like, ¥ (bad example, but if you imagine a double-crossed out letter)), underline (distinct from underscore) (stacks), overline (distinct from overscore/macron(?)) (stacks), sans-serif, monospace, blackletter (including the variation selector for the style of black letter fractor versus round hand I think), small caps izer. big smalls izer? (probably not). double-struckizer / blackboard bold? 
+combining italicizer, obliqueizer, reverse obliqueizer, rotator(?), boldizer (DUPLOYAN THICK LETTER SELECTOR?), superscriptizer (this one can stack, to make 2^2^2), subscriptizer (same), strikethough (also stacks, to get, like, ¥ (bad example, but if you imagine a double-crossed out letter)), underline (distinct from underscore) (stacks), overline (distinct from overscore/macron(?)) (stacks), sans-serif, monospace, blackletter (including the variation selector for the style of black letter fractor versus round hand I think), small caps izer. big smalls izer? (probably not). double-struckizer / blackboard bold.
 
 oh yeah, also, There are only lower case base letters and then there's a combining capitalizor. I guess this doesn't stack.
 
+Unclear to me yet if underscore = macron below or if underscore = low line. Same for overscore(?) = macron or overscore = overline. Also not clear to me what I will do for macrons or ties over two characters (maybe something like U+FE2D COMBINING CONJOINING MACRON BELOW?). Actually, this is settled by the fact that unicode considers _, U+005F, the underscore, to be a low line, putting it in congruence with their combining low line diacritic.
+
+If feeling greedy: greek letters, possibly cyrillic, possibly allow people to typeset music in carpogram. Tables seem possible, but like too much comeon ha ha that's rich text there.
+
 combining combinizer for o^(that) = ô. (oh yes this is also specifically combining over, because you could also put things under etc. There is also a combine-under mark.)
+
+need a lot of hooks and curls and stuff.
 
 maybe ø is just o/(combining combinizer)
 
 possibly a combining variation selectionizer, which is used with a hex digit?
 
-possibly a combining tagizer?
+possibly a combining tagizer? to make tag characters, which can then be used to indicate source language.
 
 I have also joked about adding the chess characters, possibly with a black square and then using the combining combinizer on that to color them. and maybe the integral symbol.
 
