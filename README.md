@@ -20,7 +20,11 @@ ASCII punctuation (most of it).
 
 normal punctuation (including interobang and perconitination point).
 
-combining italicizer, obliqueizer, reverse obliqueizer, rotator(?), boldizer (DUPLOYAN THICK LETTER SELECTOR?), superscriptizer (this one can stack, to make 2^2^2), subscriptizer (same), strikethough (also stacks, to get, like, ¥ (bad example, but if you imagine a double-crossed out letter)), underline (distinct from underscore) (stacks), overline (distinct from overscore/macron(?)) (stacks), sans-serif, monospace, blackletter (including the variation selector for the style of black letter fractor versus round hand I think), small caps izer. big smalls izer? (probably not). double-struckizer / blackboard bold.
+combining italicizer, obliqueizer, reverse obliqueizer, rotator(?), boldizer (DUPLOYAN THICK LETTER SELECTOR?), superscriptizer (this one can stack, to make 2^2^2), subscriptizer (same), strikethough (also stacks, to get, like, ¥ (bad example, but if you imagine a double-crossed out letter)), underline (distinct from underscore) (stacks), overline (distinct from overscore/macron(?)) (stacks), sans-serif, monospace, blackletter (including the variation selector for the style of black letter fractor versus round hand I think), small caps izer. big smalls izer? (probably not). double-struckizer / blackboard bold. Cursivizer?
+
+It's clear that some of these can compose (bold+italic, for example), but for some of them it is not so clear (italic+italic). So, guidence should probably be given about this.
+
+Turnedizer (upsidedownizer). Possibly conflicts with / just is egyptian rotational controls?
 
 Regional-indicator-izer? hmm. Keycap-izer? Hmm. Could also merge these ideas in with drop-caps, although that might be foolish.
 
@@ -74,7 +78,7 @@ May encode a fraction slash and also a fraction bar. It would be possible to get
 
 ∧ ∨ symbols. To get the xor symbols and whatever you just have to use the combiners. ¬ symbol.
 
-Distinct umlaut and diaerisis/trema. (Note that in the conversion back to unicode, the canonical way to keep these distinct, so far, is the questionable hack https://unicode.org/faq/char_combmark.html#18 (but I don't think there will be a ton of converting carpogram back to unicode, honestly, given that carpogram is highly distinct in its concepts and much more wide-reaching)). There should also be a ◌̋ (double accute accent), I suppose, unless you just use two accute accents on that thang. Possibly the trema would just be two dots over, anyway. Also possibly, the standalone umlaut, if we have one, could encode ascii ".
+Distinct umlaut and diaerisis/trema. (Note that in the conversion back to unicode, the canonical way to keep these distinct, so far, is the questionable hack https://unicode.org/faq/char_combmark.html#18 (but I don't think there will be a ton of converting carpogram back to unicode, honestly, given that carpogram is highly distinct in its concepts and much more wide-reaching)). There should also be a ◌̋ (double accute accent), I suppose, unless you just use two accute accents on that thang. Possibly the trema would just be two dots over, anyway. Also possibly, the standalone umlaut, if we have one, could encode ascii " (this is a dumb idea, actually).
 
 dele, krull, irony exclamation point. 
 
@@ -85,6 +89,10 @@ I would like to include emoji but it's hard to say how I could do that without b
 To have tool tips for abbreviations, maybe use the unicode tags. And invent a new tag character for abbrs? Or perhaps just use the interlinear gloss characters, since uhhh how you gonna print a tooltip lol. This isn't hypertext.
 
 Possibly include a novelty [carpogram] character, the word carpogram in a box, that can also be used as a magic number for this type of text.
+
+proper angle brackets, of many types.
+
+Some care has been taken in carpogram to avoid being sadistically incompatible with Unicode, which we acknowledge as a very useful encoding as well. As a random example of this, all variation sequences in carpogram that **could** match a variation sequence in Unicode, do.
 
 ## How to work with Carpogram
 Like all realistic text-encodings (such as unicode, in contrast to ASCII, which encodes a fantasy text encoding where people use a small subset of text), care must be taken when processing carpogram. In particular, despite being a "single-byte" encoding, many of the bytes are modifiers, which must be considered to determine the semantic meaning of the text. This is often largely dependent on the context in which you are writting an application. If writing a program to add numbers, zero and slashed zero should be accounted the same. If writing a program to display text, they should be accounted differently. If writing a program to search through text, they should be accounted the same unless strict matching is enabled (but this itself is a UX (user experience) choice.
@@ -111,6 +119,8 @@ This also composes with the VS as you would(?) expect.
 
 A[TAG][VS] = A followed by VS[the numerical value of a tagizers's codepoint]
 A[VS][TAG] = TAG(a followed by VS[the numerical value of a capitalizer's codepoint])
+
+The reader will note that most unicode tag characters are thus representable in carpogram, except for the ascii straight-quote tag, which character is not present in carpogram.
 
 TODO: how do I summon the begin/language tag, and the end tag? I have a lot of codepoints to work with, but it's unclear to me what to do...
 
