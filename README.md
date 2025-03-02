@@ -22,7 +22,7 @@ combining italicizer, obliqueizer, reverse obliqueizer, rotator(?) boldizer, sup
 
 oh yeah, also, There are only lower case base letters and then there's a combining capitalizor. I guess this doesn't stack.
 
-combining combinizer for o^(that) = ô. (oh yes this is also specifically combining over, because you could also put things under etc)
+combining combinizer for o^(that) = ô. (oh yes this is also specifically combining over, because you could also put things under etc. There is also a combine-under mark.)
 
 maybe ø is just o/(combining combinizer)
 
@@ -42,7 +42,9 @@ particular picture of a dog (cartoon) (question dog)
 
 one type of new line, possibly called LF, possibly NL. 
 
-var selector for 0, 0 with slash, 0 with dot, 0 explicitly with nothing in the middle.
+var selector for 0, 0 with slash, 0 with dot, 0 explicitly with nothing in the middle. 0 with reverse slash?
+
+fraction bar character, that does the fraction slash stuff. Note that % is its own character, and cannot be made through 0⁄0 or ⁰/₀ or any such trickery. (ideally, your font reflects this by slightly ornamenting the % sign.)
 
 dele, krull, irony exclamation point. 
 
