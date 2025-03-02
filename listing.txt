@@ -1,20 +1,274 @@
 (draft, nonbinding)
 
-0
-1
-2
-3
-4
-5
-6
-7
-8
-9
-A
-B
-C
-D
-E
-F
+This is a UTF-8 text file describing carpogram (a text encoding that is distinct from utf-8), and as such some character may be unrepresentable. (In a carpogram text file, some would still be unrepresentable, given that it's very awkward to actually literally display a combining character, for instance.)
+
+Characters are listed out next to their corresponding byte values, which are written like `0x00: `. Section headers are written like `# Digits`. Additional information is included with some of the characters, in a format roughly corresponding to that of https://www.unicode.org/Public/UCD/latest/ucd/NamesList.txt
+
+---
+
+Digits
+0x00: digit zero ; corresponding unicode character: 0
+  ~ 0 VS1: slashed 0
+  ~ 0 VS2: blank-middle 0
+0x01: digit one ; corresponding unicode character: 
+0x02:  ; corresponding unicode character: 
+0x03:  ; corresponding unicode character: 
+0x04:  ; corresponding unicode character: 
+0x05:  ; corresponding unicode character: 
+0x06:  ; corresponding unicode character: 
+0x07:  ; corresponding unicode character: 
+0x08:  ; corresponding unicode character: 
+0x09:  ; corresponding unicode character: 
+0x0A:  ; corresponding unicode character: 
+0x0B:  ; corresponding unicode character: 
+0x0C:  ; corresponding unicode character: 
+0x0D:  ; corresponding unicode character: 
+0x0E:  ; corresponding unicode character: 
+0x0F:  ; corresponding unicode character: 
+0x10:  ; corresponding unicode character: 
+0x11:  ; corresponding unicode character: 
+0x12:  ; corresponding unicode character: 
+0x13:  ; corresponding unicode character: 
+0x14:  ; corresponding unicode character: 
+0x15:  ; corresponding unicode character: 
+0x16:  ; corresponding unicode character: 
+0x17:  ; corresponding unicode character: 
+0x18:  ; corresponding unicode character: 
+0x19:  ; corresponding unicode character: 
+0x1A:  ; corresponding unicode character: 
+0x1B:  ; corresponding unicode character: 
+0x1C:  ; corresponding unicode character: 
+0x1D:  ; corresponding unicode character: 
+0x1E:  ; corresponding unicode character: 
+0x1F:  ; corresponding unicode character: 
+0x20:  ; corresponding unicode character: 
+0x21:  ; corresponding unicode character: 
+0x22:  ; corresponding unicode character: 
+0x23:  ; corresponding unicode character: 
+0x24:  ; corresponding unicode character: 
+0x25:  ; corresponding unicode character: 
+0x26:  ; corresponding unicode character: 
+0x27:  ; corresponding unicode character: 
+0x28:  ; corresponding unicode character: 
+0x29:  ; corresponding unicode character: 
+0x2A:  ; corresponding unicode character: 
+0x2B:  ; corresponding unicode character: 
+0x2C:  ; corresponding unicode character: 
+0x2D:  ; corresponding unicode character: 
+0x2E:  ; corresponding unicode character: 
+0x2F:  ; corresponding unicode character: 
+0x30:  ; corresponding unicode character: 
+0x31:  ; corresponding unicode character: 
+0x32:  ; corresponding unicode character: 
+0x33:  ; corresponding unicode character: 
+0x34:  ; corresponding unicode character: 
+0x35:  ; corresponding unicode character: 
+0x36:  ; corresponding unicode character: 
+0x37:  ; corresponding unicode character: 
+0x38:  ; corresponding unicode character: 
+0x39:  ; corresponding unicode character: 
+0x3A:  ; corresponding unicode character: 
+0x3B:  ; corresponding unicode character: 
+0x3C:  ; corresponding unicode character: 
+0x3D:  ; corresponding unicode character: 
+0x3E:  ; corresponding unicode character: 
+0x3F:  ; corresponding unicode character: 
+0x40:  ; corresponding unicode character: 
+0x41:  ; corresponding unicode character: 
+0x42:  ; corresponding unicode character: 
+0x43:  ; corresponding unicode character: 
+0x44:  ; corresponding unicode character: 
+0x45:  ; corresponding unicode character: 
+0x46:  ; corresponding unicode character: 
+0x47:  ; corresponding unicode character: 
+0x48:  ; corresponding unicode character: 
+0x49:  ; corresponding unicode character: 
+0x4A:  ; corresponding unicode character: 
+0x4B:  ; corresponding unicode character: 
+0x4C:  ; corresponding unicode character: 
+0x4D:  ; corresponding unicode character: 
+0x4E:  ; corresponding unicode character: 
+0x4F:  ; corresponding unicode character: 
+0x50:  ; corresponding unicode character: 
+0x51:  ; corresponding unicode character: 
+0x52:  ; corresponding unicode character: 
+0x53:  ; corresponding unicode character: 
+0x54:  ; corresponding unicode character: 
+0x55:  ; corresponding unicode character: 
+0x56:  ; corresponding unicode character: 
+0x57:  ; corresponding unicode character: 
+0x58:  ; corresponding unicode character: 
+0x59:  ; corresponding unicode character: 
+0x5A:  ; corresponding unicode character: 
+0x5B:  ; corresponding unicode character: 
+0x5C:  ; corresponding unicode character: 
+0x5D:  ; corresponding unicode character: 
+0x5E:  ; corresponding unicode character: 
+0x5F:  ; corresponding unicode character: 
+0x60:  ; corresponding unicode character: 
+0x61:  ; corresponding unicode character: 
+0x62:  ; corresponding unicode character: 
+0x63:  ; corresponding unicode character: 
+0x64:  ; corresponding unicode character: 
+0x65:  ; corresponding unicode character: 
+0x66:  ; corresponding unicode character: 
+0x67:  ; corresponding unicode character: 
+0x68:  ; corresponding unicode character: 
+0x69:  ; corresponding unicode character: 
+0x6A:  ; corresponding unicode character: 
+0x6B:  ; corresponding unicode character: 
+0x6C:  ; corresponding unicode character: 
+0x6D:  ; corresponding unicode character: 
+0x6E:  ; corresponding unicode character: 
+0x6F:  ; corresponding unicode character: 
+0x70:  ; corresponding unicode character: 
+0x71:  ; corresponding unicode character: 
+0x72:  ; corresponding unicode character: 
+0x73:  ; corresponding unicode character: 
+0x74:  ; corresponding unicode character: 
+0x75:  ; corresponding unicode character: 
+0x76:  ; corresponding unicode character: 
+0x77:  ; corresponding unicode character: 
+0x78:  ; corresponding unicode character: 
+0x79:  ; corresponding unicode character: 
+0x7A:  ; corresponding unicode character: 
+0x7B:  ; corresponding unicode character: 
+0x7C:  ; corresponding unicode character: 
+0x7D:  ; corresponding unicode character: 
+0x7E:  ; corresponding unicode character: 
+0x7F:  ; corresponding unicode character: 
+0x80:  ; corresponding unicode character: 
+0x81:  ; corresponding unicode character: 
+0x82:  ; corresponding unicode character: 
+0x83:  ; corresponding unicode character: 
+0x84:  ; corresponding unicode character: 
+0x85:  ; corresponding unicode character: 
+0x86:  ; corresponding unicode character: 
+0x87:  ; corresponding unicode character: 
+0x88:  ; corresponding unicode character: 
+0x89:  ; corresponding unicode character: 
+0x8A:  ; corresponding unicode character: 
+0x8B:  ; corresponding unicode character: 
+0x8C:  ; corresponding unicode character: 
+0x8D:  ; corresponding unicode character: 
+0x8E:  ; corresponding unicode character: 
+0x8F:  ; corresponding unicode character: 
+0x90:  ; corresponding unicode character: 
+0x91:  ; corresponding unicode character: 
+0x92:  ; corresponding unicode character: 
+0x93:  ; corresponding unicode character: 
+0x94:  ; corresponding unicode character: 
+0x95:  ; corresponding unicode character: 
+0x96:  ; corresponding unicode character: 
+0x97:  ; corresponding unicode character: 
+0x98:  ; corresponding unicode character: 
+0x99:  ; corresponding unicode character: 
+0x9A:  ; corresponding unicode character: 
+0x9B:  ; corresponding unicode character: 
+0x9C:  ; corresponding unicode character: 
+0x9D:  ; corresponding unicode character: 
+0x9E:  ; corresponding unicode character: 
+0x9F:  ; corresponding unicode character: 
+0xA0:  ; corresponding unicode character: 
+0xA1:  ; corresponding unicode character: 
+0xA2:  ; corresponding unicode character: 
+0xA3:  ; corresponding unicode character: 
+0xA4:  ; corresponding unicode character: 
+0xA5:  ; corresponding unicode character: 
+0xA6:  ; corresponding unicode character: 
+0xA7:  ; corresponding unicode character: 
+0xA8:  ; corresponding unicode character: 
+0xA9:  ; corresponding unicode character: 
+0xAA:  ; corresponding unicode character: 
+0xAB:  ; corresponding unicode character: 
+0xAC:  ; corresponding unicode character: 
+0xAD:  ; corresponding unicode character: 
+0xAE:  ; corresponding unicode character: 
+0xAF:  ; corresponding unicode character: 
+0xB0:  ; corresponding unicode character: 
+0xB1:  ; corresponding unicode character: 
+0xB2:  ; corresponding unicode character: 
+0xB3:  ; corresponding unicode character: 
+0xB4:  ; corresponding unicode character: 
+0xB5:  ; corresponding unicode character: 
+0xB6:  ; corresponding unicode character: 
+0xB7:  ; corresponding unicode character: 
+0xB8:  ; corresponding unicode character: 
+0xB9:  ; corresponding unicode character: 
+0xBA:  ; corresponding unicode character: 
+0xBB:  ; corresponding unicode character: 
+0xBC:  ; corresponding unicode character: 
+0xBD:  ; corresponding unicode character: 
+0xBE:  ; corresponding unicode character: 
+0xBF:  ; corresponding unicode character: 
+0xC0:  ; corresponding unicode character: 
+0xC1:  ; corresponding unicode character: 
+0xC2:  ; corresponding unicode character: 
+0xC3:  ; corresponding unicode character: 
+0xC4:  ; corresponding unicode character: 
+0xC5:  ; corresponding unicode character: 
+0xC6:  ; corresponding unicode character: 
+0xC7:  ; corresponding unicode character: 
+0xC8:  ; corresponding unicode character: 
+0xC9:  ; corresponding unicode character: 
+0xCA:  ; corresponding unicode character: 
+0xCB:  ; corresponding unicode character: 
+0xCC:  ; corresponding unicode character: 
+0xCD:  ; corresponding unicode character: 
+0xCE:  ; corresponding unicode character: 
+0xCF:  ; corresponding unicode character: 
+0xD0:  ; corresponding unicode character: 
+0xD1:  ; corresponding unicode character: 
+0xD2:  ; corresponding unicode character: 
+0xD3:  ; corresponding unicode character: 
+0xD4:  ; corresponding unicode character: 
+0xD5:  ; corresponding unicode character: 
+0xD6:  ; corresponding unicode character: 
+0xD7:  ; corresponding unicode character: 
+0xD8:  ; corresponding unicode character: 
+0xD9:  ; corresponding unicode character: 
+0xDA:  ; corresponding unicode character: 
+0xDB:  ; corresponding unicode character: 
+0xDC:  ; corresponding unicode character: 
+0xDD:  ; corresponding unicode character: 
+0xDE:  ; corresponding unicode character: 
+0xDF:  ; corresponding unicode character: 
+0xE0:  ; corresponding unicode character: 
+0xE1:  ; corresponding unicode character: 
+0xE2:  ; corresponding unicode character: 
+0xE3:  ; corresponding unicode character: 
+0xE4:  ; corresponding unicode character: 
+0xE5:  ; corresponding unicode character: 
+0xE6:  ; corresponding unicode character: 
+0xE7:  ; corresponding unicode character: 
+0xE8:  ; corresponding unicode character: 
+0xE9:  ; corresponding unicode character: 
+0xEA:  ; corresponding unicode character: 
+0xEB:  ; corresponding unicode character: 
+0xEC:  ; corresponding unicode character: 
+0xED:  ; corresponding unicode character: 
+0xEE:  ; corresponding unicode character: 
+0xEF:  ; corresponding unicode character: 
+0xF0:  ; corresponding unicode character: 
+0xF1:  ; corresponding unicode character: 
+0xF2:  ; corresponding unicode character: 
+0xF3:  ; corresponding unicode character: 
+0xF4:  ; corresponding unicode character: 
+0xF5:  ; corresponding unicode character: 
+0xF6:  ; corresponding unicode character: 
+0xF7:  ; corresponding unicode character: 
+0xF8:  ; corresponding unicode character: 
+0xF9:  ; corresponding unicode character: 
+0xFA:  ; corresponding unicode character: 
+0xFB:  ; corresponding unicode character: 
+0xFC:  ; corresponding unicode character: 
+0xFD:  ; corresponding unicode character: 
+0xFE:  ; corresponding unicode character: 
+0xFF:  ; corresponding unicode character: 
+
+---
+Unsorted
+
+ V
 
 ␠␌␣␤
