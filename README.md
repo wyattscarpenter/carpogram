@@ -56,6 +56,8 @@ the sound a bell makes
 
 fraction bar character, that does the fraction slash stuff. Note that % is its own character, and cannot be made through 0⁄0 or ⁰/₀ or any such trickery. (ideally, your font reflects this by slightly ornamenting the % sign.)
 
+May encode a fraction slash and also a fraction bar. It would be possible to get non-digit characters to render in these, but would need more funny control characters to do so...
+
 ∧ ∨ symbols. To get the xor symbols and whatever you just have to use the combiners. ¬ symbol.
 
 Distinct umalut and diaerisis. (Note that in the conversion back to unicode, the canonical way to keep these distinct, so far, is the questionable hack https://unicode.org/faq/char_combmark.html#18 (but I don't think there will be a ton of converting carpogram back to unicode, honestly, given that carpogram is highly distinct in its concepts and much more wide-reaching)).
