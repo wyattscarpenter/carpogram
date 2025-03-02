@@ -2,6 +2,9 @@
 a text encoding
 
 # random notes
+
+a basic goal of this plain text encoding is to make it really nice for real actual English — computing has come a long way since using a computer meant you had to compromise and have one symbol as a hyphen-minus. you can have nice things.
+
 Include a character like ) (but smaller?) to be used in smiley faces like :) without messing up nesting parens its found in?
 
 iso basic Latin
@@ -25,3 +28,13 @@ possibly a combining tagizer?
 I have also joked about adding the chess characters, possibly with a black square and then using the combining combinizer on that to color them. and maybe the integral symbol.
 
 I would add the android blob emojis if I could, but that seems out-of-scope.
+
+space, nonbreaking space, breaking nonspace, and nonbreaking nonspace. (These are all already unicode concepts, but this is what I will call them.)
+
+particular picture of a dog (cartoon) (question dog)
+
+0xFF is formfeed?
+
+one type of new line, possibly called LF, possibly NL. 
+
+
