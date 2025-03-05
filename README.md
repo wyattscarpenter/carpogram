@@ -3,6 +3,12 @@ a text encoding
 
 ## random notes
 
+abbreviation mark similar but not identical to a period. interpunct makes it in, probably not word separator middle dot though. combiner that combines the next two.
+
+variation selector to make periods square, which I believe is required for Armenian or something
+
+combiners have to be prefix in order to answer such devious questions as "what is the first character". You still can't answer what is the last character without scanning the whole thing, but that's a much less common question
+
 a basic goal of this plain text encoding is to make it really nice for real actual English — computing has come a long way since using a computer meant you had to compromise and have one symbol as a hyphen-minus. you can have nice things.
   (incidentally, this also connects to the idea that all of this text is by default proportionally laid out and serif implicitly).
 
