@@ -3,7 +3,7 @@ a text encoding
 
 ## random notes
 
-possibly include the left comma and straight comma? perhaps also the Chinese list comma (diagonal comma? backslash comma?)
+possibly include the left comma and straight comma? perhaps also the Chinese list comma (diagonal comma? backslash comma?). Could also include the right colon but idk the normal space+colon kind of does that alright already though.
 
 abbreviation mark similar but not identical to a period. interpunct makes it in, probably not word separator middle dot though. combiner that combines the next two.
 
