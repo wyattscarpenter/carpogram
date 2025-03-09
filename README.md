@@ -5,6 +5,17 @@ a text encoding
 
 abbreviation mark similar but not identical to a period. interpunct makes it in, probably not word separator middle dot though. combiner that combines the next two.
 
+cool s ( https://en.wikipedia.org/wiki/Cool_S )
+
+possibly add the regional indicator izer, and having done that, extend the standard to also encompass the welsh thing? And the use of years for flag emoji? _Do_ I believe in the unicode extended universe? (W/ emoji zwj sequences suggested for general interchange and also maybe not) I lean toward no in general. But this might be an exception. Although I might not believe in this mechanism of encoding, frankly (this is immaterial for compatibility, as unicode already changed the encoding mechanism from the original character-based system from the original — see "what's new in unicode 6" for more.)
+
+Possibly have an object marker character, which I used to think was a crazy thing to have in unicode, so that people can actually work with carpogram in enriched formats better? (actually I guess the TEI thing fixes this.)
+
+Suggest TEI as an alternative for people who need non-latin chars?
+(as a fun fact, TEI documents are XML and they can declare their encoding, so they could(?) be written in carpogram)
+
+the izers have to be prefix or it's impossible to answer "what is the first character" without scanning in the entire text. (This is still impossible for last character, but that's far less common of an operation) (nth character is impossible in O(n) for unicode or any non-fantasy text encoding).
+
 variation selector to make periods square, which I believe is required for Armenian or something
 
 combiners have to be prefix in order to answer such devious questions as "what is the first character". You still can't answer what is the last character without scanning the whole thing, but that's a much less common question
