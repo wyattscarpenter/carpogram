@@ -9,6 +9,8 @@ abbreviation mark similar but not identical to a period. interpunct makes it in,
 
 cool s ( https://en.wikipedia.org/wiki/Cool_S )
 
+whether or not a text file "should" end with a new line is a convention of files and operating systems. However, in the opinion of this author, it is clear that there is no semantic reason why a file should end with a new line (newline is a separator in this standard), and the reason text files do on Unix (which determined a great number of computing conventions) is to make it easier to manipulate them (you can >> the file without having to check if it happens to end with a new line first). So, you should probably continue doing that unless you are working on an operating system (or within the context of different operating system conventions) that handles things differently.
+
 possibly add the regional indicator izer, and having done that, extend the standard to also encompass the welsh thing? And the use of years for flag emoji? _Do_ I believe in the unicode extended universe? (W/ emoji zwj sequences suggested for general interchange and also maybe not) I lean toward no in general. But this might be an exception. Although I might not believe in this mechanism of encoding, frankly (this is immaterial for compatibility, as unicode already changed the encoding mechanism from the original character-based system from the original — see "what's new in unicode 6" for more.) a more philosophical question: are all characters Unicode encodes ipso facto textual characters? It seems like if people use characters/certain-shapes in text enough (ever?) they do in fact become textual characters ipso facto, so maybe adding to Unicode is enough (or at least enough to create the presumption, much like how the official name for something is presumptively a good name candidate for the Wikipedia page about it, even though the Wikipedia page goes by common usage, because it least somebody is probably using the official name!)
 
 Possibly have an object marker character, which I used to think was a crazy thing to have in unicode, so that people can actually work with carpogram in enriched formats better? (actually I guess the TEI thing fixes this.)
@@ -25,7 +27,9 @@ combiners have to be prefix in order to answer such devious questions as "what i
 a basic goal of this plain text encoding is to make it really nice for real actual English — computing has come a long way since using a computer meant you had to compromise and have one symbol as a hyphen-minus. you can have nice things.
   (incidentally, this also connects to the idea that all of this text is by default proportionally laid out and serif implicitly).
 
-one of my unusual opinions that will be represented here is that the apostrophe character will be encoded differently from, and visually distinct to, the single quotes ‘ and ’. There also is no "straight single quotes". (And perhaps the double quote should simply be made of single quotes... hmm...) (let's not make it a comma accent mark, though; let's not go crazy).
+  
+
+one of my unusual opinions that will be represented here is that the apostrophe character will be encoded differently from, and visually distinct to, the single quotes ‘ and ’. There also is no "straight single quotes". (And perhaps the double quote should simply be made of single quotes... hmm...) (let's not make it a comma accent mark, though; let's not go crazy (Plus also there are comma diacriticals that should not be confused).
 
 Include a character like ) (but smaller?) to be used in smiley faces like :) without messing up nesting parens its found within.
 
@@ -39,7 +43,9 @@ ASCII punctuation (most of it).
 
 normal punctuation (including interobang and perconitination point).
 
-combining italicizer, obliqueizer, reverse obliqueizer, rotator(?), boldizer (DUPLOYAN THICK LETTER SELECTOR?), superscriptizer (this one can stack, to make 2^2^2), subscriptizer (same), strikethough (also stacks, to get, like, ¥ (bad example, but if you imagine a double-crossed out letter)), underline (distinct from underscore) (stacks), overline (distinct from overscore/macron(?)) (stacks), sans-serif, monospace, blackletter (including the variation selector for the style of black letter fractor versus round hand I think), small caps izer. big smalls izer? (probably not). double-struckizer / blackboard bold. Cursivizer?
+combining italicizer, obliqueizer, reverse obliqueizer, rotator(?), boldizer (DUPLOYAN THICK LETTER SELECTOR?), superscriptizer (this one can stack, to make 2^2^2), subscriptizer (same), strikethough (also stacks, to get, like, ¥ (bad example, but if you imagine a double-crossed out letter)), underline (distinct from underscore) (stacks), overline (distinct from overscore/macron(?)) (stacks), sans-serif, monospace, blackletter (including the variation selector for the style of black letter fractor versus round hand I think), small caps izer. big smalls izer? (probably not). double-struckizer / blackboard bold. Cursivizer? slab serif izer?
+
+text is assumed to be written in Roman (non-italic, non-bold, etc) in a traditional serif font. There is no way to explicitly request this because 1 these are combining marks not variation selectors 2 are you crazy this is just what text is; pick a different font if yours doesn't work right.
 
 It's clear that some of these can compose (bold+italic, for example), but for some of them it is not so clear (italic+italic). So, guidence should probably be given about this.
 
@@ -147,4 +153,4 @@ TODO: how do I summon the begin/language tag, and the end tag? I have a lot of c
 
 There are two answers to this question. If you just want running text in a book-like style, carpogram is in fact optimised for that. That's, in a way, what it was made for.
 
-If you want heirarchical text relations like sections and headings, and aren't happy with something like writing `1.1.1.1 My section`, then you are out of luck, and must use an actual markup language to do this. So too if you want funny (rich) text formatting like color (todo: could I include a mechanism for rubricated or colored text, possibly using the tag characters?), or hypertext features.
+If you want heirarchical text relations like sections and headings, and aren't happy with something like writing `1.1.1.1 My section`, then you are out of luck, and must use an actual markup language to do this. So too if you want funny (rich) text formatting like color (todo: could I include a mechanism for rubricated or colored text, possibly using the tag characters?), or hypertext features. You also cannot control stuff like justification, margins, etc, in carpogram. if you would like to do this, may I recommend the software open office writer? perhaps use gutenberg's movable type machine?
