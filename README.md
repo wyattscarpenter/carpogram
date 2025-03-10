@@ -24,16 +24,20 @@ variation selector to make periods square, which I believe is required for Armen
 
 combiners have to be prefix in order to answer such devious questions as "what is the first character". You still can't answer what is the last character without scanning the whole thing, but that's a much less common question
 
+The layout is invariably left-to-right.
+
+Are the masculine and feminine ordinal indicators ◌ª ◌º just superscript a and o, despite being distinct in unicode? I think that's plausible. This also kind of implies that you can make a numero symbol just by using No_(2-place combiner under)(superscriptizer).
+
+Should superscripts be their own characters, or belong to the previous character? Their own characters.
+
 a basic goal of this plain text encoding is to make it really nice for real actual English — computing has come a long way since using a computer meant you had to compromise and have one symbol as a hyphen-minus. you can have nice things.
   (incidentally, this also connects to the idea that all of this text is by default proportionally laid out and serif implicitly).
 
-  
+
 
 one of my unusual opinions that will be represented here is that the apostrophe character will be encoded differently from, and visually distinct to, the single quotes ‘ and ’. There also is no "straight single quotes". (And perhaps the double quote should simply be made of single quotes... hmm...) (let's not make it a comma accent mark, though; let's not go crazy (Plus also there are comma diacriticals that should not be confused).
 
 Include a character like ) (but smaller?) to be used in smiley faces like :) without messing up nesting parens its found within.
-
-iso basic Latin.
 
 possibly æ and œ? unclear to me. possibly also single-storey a? or var selector for that? Possibly also var selector for single- and double- storey g.
 
@@ -43,7 +47,7 @@ ASCII punctuation (most of it).
 
 normal punctuation (including interobang and perconitination point).
 
-combining italicizer, obliqueizer, reverse obliqueizer, rotator(?), boldizer (DUPLOYAN THICK LETTER SELECTOR?), superscriptizer (this one can stack, to make 2^2^2), subscriptizer (same), strikethough (also stacks, to get, like, ¥ (bad example, but if you imagine a double-crossed out letter)), underline (distinct from underscore) (stacks), overline (distinct from overscore/macron(?)) (stacks), sans-serif, monospace, blackletter (including the variation selector for the style of black letter fractor versus round hand I think), small caps izer. big smalls izer? (probably not). double-struckizer / blackboard bold. Cursivizer? slab serif izer?
+combining italicizer, obliqueizer, reverse obliqueizer, rotator(?), boldizer (DUPLOYAN THICK LETTER SELECTOR?), superscriptizer (this one can stack, to make 2^2^2), subscriptizer (same), strikethough (also stacks, to get, like, ¥ (bad example, but if you imagine a double-crossed out letter)), underline (distinct from underscore) (stacks), overline (distinct from overscore/macron(?)) (stacks), sans-serif, monospace, blackletter (including the variation selector for the style of black letter fraktur versus round hand I think), small caps izer. big smalls izer? (probably not). double-struckizer / blackboard bold. Cursivizer? slab serif izer? Swashizer?
 
 text is assumed to be written in Roman (non-italic, non-bold, etc) in a traditional serif font. There is no way to explicitly request this because 1 these are combining marks not variation selectors 2 are you crazy this is just what text is; pick a different font if yours doesn't work right.
 
@@ -75,13 +79,13 @@ I have also joked about adding the chess characters, possibly with a black squar
 
 I would add the android blob emojis if I could, but that seems out-of-scope.
 
-space, nonbreaking space, breaking nonspace, and nonbreaking nonspace. (These are all already unicode concepts, but this is what I will call them.) (I do not have 
+space, nonbreaking space, breaking nonspace, and nonbreaking nonspace. (These are all already unicode concepts, but this is what I will call them.) (I do not have
 
 particular picture of a dog (cartoon) (question dog)
 
 0xFF is formfeed?
 
-one type of new line, possibly called LF, possibly NL. 
+one type of new line, possibly called LF, possibly NL.
 
 var selector for 0, 0 with slash, 0 with dot, 0 explicitly with nothing in the middle. 0 with reverse slash?
 
@@ -105,7 +109,7 @@ May encode a fraction slash and also a fraction bar. It would be possible to get
 
 Distinct umlaut and diaerisis/trema. (Note that in the conversion back to unicode, the canonical way to keep these distinct, so far, is the questionable hack https://unicode.org/faq/char_combmark.html#18 (but I don't think there will be a ton of converting carpogram back to unicode, honestly, given that carpogram is highly distinct in its concepts and much more wide-reaching)). There should also be a ◌̋ (double accute accent), I suppose, unless you just use two accute accents on that thang. Possibly the trema would just be two dots over, anyway. Also possibly, the standalone umlaut, if we have one, could encode ascii " (this is a dumb idea, actually).
 
-dele, krull, irony exclamation point. 
+dele, krull, irony exclamation point.
 
 minus, hyphen, en dash, em dash, two-em dash, three-em dash, double hyphen (or perhaps n-hyphens should be achieved with --(over-combiner), triple hyphen, quadruple hyphen. I guess one of these (em dash) could be used for strike-through?
 
@@ -117,7 +121,9 @@ Possibly include a novelty [carpogram] character, the word carpogram in a box, t
 
 proper angle brackets, of many types.
 
-Some care has been taken in carpogram to avoid being sadistically incompatible with Unicode, which we acknowledge as a very useful encoding as well. As a random example of this, all variation sequences in carpogram that **could** match a variation sequence in Unicode, do.
+Some care has been taken in carpogram to avoid being sadistically incompatible with Unicode, which we acknowledge as a very useful encoding as well. As a random example of this, all variation sequences in carpogram that **could** match a variation sequence in Unicode, do. As another example, combiners in carpogram are postfix, even though they could easily have been prefix (as was, at one point, my intuitive placement for them — on the logic that the computer needs to know those to figure out what to render, so you could do it without backtracking).
+
+Possibly include a tag that is not begin language but rather begin transliteration, and this allows for other scripts in carpogram. This seems bad, however, in that it seems like a multibyte encoding, and indeed a multi-byte encoding smuggled in. So probably won't do this.
 
 ## How to work with Carpogram
 Like all realistic text-encodings (such as unicode, in contrast to ASCII, which encodes a fantasy text encoding where people use a small subset of text), care must be taken when processing carpogram. In particular, despite being a "single-byte" encoding, many of the bytes are modifiers, which must be considered to determine the semantic meaning of the text. This is often largely dependent on the context in which you are writting an application. If writing a program to add numbers, zero and slashed zero should be accounted the same. If writing a program to display text, they should be accounted differently. If writing a program to search through text, they should be accounted the same unless strict matching is enabled (but this itself is a UX (user experience) choice.

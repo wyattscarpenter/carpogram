@@ -7,44 +7,70 @@ Characters are listed out next to their corresponding byte values, which are wri
 ---
 
 Digits
+* Often called "arabic numerals" or "western arabic numerals".
+* Non-lining numerals are not directly supported using variation selectors, even though several other variations are. (non-lining numerals can be used in fonts, still — but then again, how about you don't?)
+
 0x00: digit zero ; corresponding unicode character: 0
-  ~ 0 VS1: slashed 0
-  ~ 0 VS2: blank-middle 0
-0x01: digit one ; corresponding unicode character: 
-0x02:  ; corresponding unicode character: 
-0x03:  ; corresponding unicode character: 
-0x04:  ; corresponding unicode character: 
-0x05:  ; corresponding unicode character: 
-0x06:  ; corresponding unicode character: 
-0x07:  ; corresponding unicode character: 
-0x08:  ; corresponding unicode character: 
-0x09:  ; corresponding unicode character: 
-0x0A:  ; corresponding unicode character: 
-0x0B:  ; corresponding unicode character: 
-0x0C:  ; corresponding unicode character: 
-0x0D:  ; corresponding unicode character: 
-0x0E:  ; corresponding unicode character: 
-0x0F:  ; corresponding unicode character: 
-0x10:  ; corresponding unicode character: 
-0x11:  ; corresponding unicode character: 
-0x12:  ; corresponding unicode character: 
-0x13:  ; corresponding unicode character: 
-0x14:  ; corresponding unicode character: 
-0x15:  ; corresponding unicode character: 
-0x16:  ; corresponding unicode character: 
-0x17:  ; corresponding unicode character: 
-0x18:  ; corresponding unicode character: 
-0x19:  ; corresponding unicode character: 
-0x1A:  ; corresponding unicode character: 
-0x1B:  ; corresponding unicode character: 
-0x1C:  ; corresponding unicode character: 
-0x1D:  ; corresponding unicode character: 
-0x1E:  ; corresponding unicode character: 
-0x1F:  ; corresponding unicode character: 
-0x20:  ; corresponding unicode character: 
-0x21:  ; corresponding unicode character: 
-0x22:  ; corresponding unicode character: 
-0x23:  ; corresponding unicode character: 
+  ~ 0x00 VS0: zero explicitly indicated to have a blank middle
+  ~ 0x00 VS1: slashed zero with the slash going the normal way (from the top right to the bottom left)
+  ~ 0x00 VS2: slashed zero with the slash going the other way (from the top left to the bottom right)
+  ~ 0x00 VS3: zero with a dot in the middle of it (dotted zero)
+0x01: digit one ; corresponding unicode character: 1
+  * one is written in a variety of ways, but I did not feel these differences were significant enough to warrant VSs. Especially because writing 1 so as to appear identical with a vertical bar, |, strikes me as unwise anyway.
+0x02: digit two ; corresponding unicode character: 2
+0x03: digit three ; corresponding unicode character: 3
+  * occasionally this is written with a "flat top", but I did not feel this difference was significant enough to warrant a VS.
+0x04: digit four ; corresponding unicode character: 4
+  ~ 0x04 VS0: closed top four
+  ~ 0x04 VS1: open top four (resembling └┤, ౺ , Ɥ, and 🯴)
+0x05: digit five ; corresponding unicode character: 5
+0x06: digit six ; corresponding unicode character: 6
+0x07: digit seven ; corresponding unicode character: 7
+  ~ 0x07 VS0: no crossbar in the middle
+  ~ 0x07 VS1: crossbar in the middle
+0x08: digit eight ; corresponding unicode character: 8
+0x09: digit nine ; corresponding unicode character: 9
+  * the tail on the 9 is usually curved in printing, or at least slanted, but often straight in handwriting. However, the "straight 9" is so uncommon as a choice of printing this numeral, and so small of a difference in terms of the character topology, that I did not feel a VS for this purpose was warranted. Even the open 4 was pushing it.
+
+Modern Latin letters (lowercase)
+* Also called "ISO basic latin".
+* the first 6 of these are also digits in hexadecimal (usually they should be capitalized in that use to match the normal weighing of numerals)
+* there is no better way for me to represent these than the letters themselves. Occasionally there are spelling pronunciations of the names of the letters, but these are little better than slang for them. In Unicode, these letters are all known as "latin small letter (the letter)". And, indeed, these letters are the small/lowercase/minuscule/non-capital versions of the latin letters.
+0x0A: a ; corresponding unicode character: a
+  ~ 0x0A VS0: double-storey
+  ~ 0x0A VS1: single-storey
+0x0B: latin small letter b ; corresponding unicode character: b
+0x0C: latin small letter c ; corresponding unicode character: c
+0x0D:  ; corresponding unicode character: d
+0x0E:  ; corresponding unicode character: e
+0x0F:  ; corresponding unicode character: f
+0x10:  ; corresponding unicode character: g
+  ~ 0x10 VS0: double-storey
+  ~ 0x10 VS1: single-storey
+0x11:  ; corresponding unicode character: h
+0x12:  ; corresponding unicode character: i
+0x13:  ; corresponding unicode character: j
+0x14:  ; corresponding unicode character: k
+0x15:  ; corresponding unicode character: l
+0x16:  ; corresponding unicode character: m
+0x17:  ; corresponding unicode character: n
+0x18:  ; corresponding unicode character: o
+0x19:  ; corresponding unicode character: p
+0x1A:  ; corresponding unicode character: q
+0x1B:  ; corresponding unicode character: r
+0x1C:  ; corresponding unicode character: s
+0x1D:  ; corresponding unicode character: t
+0x1E:  ; corresponding unicode character: u
+0x1F:  ; corresponding unicode character: v
+0x20:  ; corresponding unicode character: w
+0x21:  ; corresponding unicode character: x
+0x22:  ; corresponding unicode character: y
+0x23:  ; corresponding unicode character: z
+  ~ 0x23 VS0: no crossbar in the middle
+  ~ 0x23 VS1: crossbar in the middle
+
+Punctuation (most of it)
+  * excludes the ascii straight-quote, disunifies the ascii apostrophe and hyphen-minus.
 0x24:  ; corresponding unicode character: 
 0x25:  ; corresponding unicode character: 
 0x26:  ; corresponding unicode character: 
@@ -269,6 +295,9 @@ Digits
 ---
 Unsorted
 
- V
+ VSizer
+ 
+ interobang and perconitination point. ∧ ∨ symbols. To get the xor symbols and whatever you just have to use the combiners. ¬ symbol. dele, krull, irony exclamation point. 
+
 
 ␠␌␣␤
