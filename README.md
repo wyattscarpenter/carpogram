@@ -5,6 +5,8 @@ a text encoding
 
 possibly include the left comma and straight comma? perhaps also the Chinese list comma (diagonal comma? backslash comma?). Could also include the right colon but idk the normal space+colon kind of does that alright already though.
 
+I'm pretty sure, at this point, that you'll make a "double quote" in carpogram with two single quote marks. After all, why not? It also occurs to me that people will probably be able to represent ascii "straight" double-quotes using two apostrophes, much like how they can abuse the apostrophe character to make an ascii "straight" single-quote. It is no matter. That's beyond my control.
+
 abbreviation mark similar but not identical to a period. interpunct makes it in, probably not word separator middle dot though. combiner that combines the next two.
 
 cool s ( https://en.wikipedia.org/wiki/Cool_S )
