@@ -3,6 +3,20 @@ a text encoding
 
 ## random notes
 
+I am still working on carpogram. You can't even slightly use it in theory right now, but you might find some of the ideas described in this document interesting (although most people don't find this topic very interesting in general, and it will be no more interesting than that). As such, there isn't even a version number for carpogram yet. (when there is a version number, it will probably just go 1, 2, 3, etc, and be backwards compatible forever)
+
+probably you should be able to have arbitrary text attribute combinations, and you should just have a mathematical model of what it does to the characters which can simply be repeatedly applied. Not as hard as you might think. 
+
+possibly a mistake to conflate chinese/han gothic/grass distinction with Latin San serif. But what if I were to refer to this as "unifying" them. Now we're talking.
+
+Carpogram is an enumeration of textual codepoints (discrete pieces of information in a computer system that are used to represent text). Carpogram can be used in three different realizations: Dracula, Frankenstein, and Wolfman. Again let me stress that all of these are incompatible with regular Unicode and ASCII, despite the similarities I'm about to discuss.
+Dracula: the simplest and oldest carpogram encoding. one byte (one octet) is one codepoint. there are 256 codepoints.
+Frankenstein: utf-8 but the first 256 codepoints of Unicode are replaced with the first 256 codepoints of Carpogram. This also means there are more canonical equivalences, including for surprising things such as variation selectors, and a precise map of them could be developed for Unicode-processing programs to use to adapt to Frankenstein. The first 256 codepoints of Unicode are mostly wasted on control characters anyway, so having carpogram there instead (almost a straight upgrade) is a huge boon. The main benefit of Frankenstein is being able to encode other languages, like Chinese, which are involved enough that the carpogram autocrat (me) would never independently figure out a good way to accommodate them (due to lack of expertise, spare time, etc).
+Wolfman: the codepoint-encoding scheme of utf-8, but the codepoints encoded are carpogram. this is the only encoding that can accommodate a hypothetical future where a future version of carpogram adds more codepoints.
+(unnamed potential encoding): there might be something better than UTF-8, given that we can abandon its constraints, and given that it has a known problem of overlong encodings being possible. The solution should still be self-synchronizing, but I'm not sure how easy that is or easy to mess up it might be, and I haven't thought about this problem for very long. 
+
+There is no "magic number" to indicate a carpogram stream. I'm afraid such methods are generally unreliable and also unfollowed and also unefficient and also on streamable, so you must simply preserve the metadata of what your file is in some other standard way. This is a problem for a different part of the computer system, not text encoding.
+
 possibly include the left comma and straight comma? perhaps also the Chinese list comma (diagonal comma? backslash comma?). Could also include the right colon but idk the normal space+colon kind of does that alright already though.
 
 I'm pretty sure, at this point, that you'll make a "double quote" in carpogram with two single quote marks. After all, why not? It also occurs to me that people will probably be able to represent ascii "straight" double-quotes using two apostrophes, much like how they can abuse the apostrophe character to make an ascii "straight" single-quote. It is no matter. That's beyond my control.
