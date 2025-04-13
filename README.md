@@ -3,7 +3,9 @@ a text encoding
 
 ## random notes
 
-I am still working on carpogram. You can't even slightly use it in theory right now, but you might find some of the ideas described in this document interesting (although most people don't find this topic very interesting in general, and it will be no more interesting than that). As such, there isn't even a version number for carpogram yet. (when there is a version number, it will probably just go 1, 2, 3, etc, and be backwards compatible forever)
+I am still working on carpogram. You can't even slightly use it in theory right now, but you might find some of the ideas described in this document interesting (although most people don't find this topic very interesting in general, and it will be no more interesting than that). As such, there isn't even a version number for carpogram yet, and I make random incompatible changes to it all the time. (When there is a version number, it will probably just go 1, 2, 3, etc, and be backwards compatible forever.)
+
+If you are interested in implementing carpogram, let me know. Your experiences implementing a prototype could provide invaluable feedback.
 
 probably you should be able to have arbitrary text attribute combinations, and you should just have a mathematical model of what it does to the characters which can simply be repeatedly applied. Not as hard as you might think. 
 
@@ -61,15 +63,17 @@ possibly æ and œ? unclear to me. possibly also single-storey a? or var selecto
 
 Not clear if I should include a thorn, etc, either.
 
-ASCII punctuation (most of it).
+ASCII punctuation (most of it) (mostly in ascii order).
 
 normal punctuation (including interobang and perconitination point).
+
+The izers I'm about to name affect what we call "attributes", such as boldedness, italicization; which should not be confused with "properties" like "is a letter" as specified e.g. in the uniccode character property tables. Although in carpogram capitalizedness is treated as an attribute instead of as a property (which unicode treats, in part, using Lu vs Ll properties)
 
 combining italicizer, obliqueizer, reverse obliqueizer, rotator(?), boldizer (DUPLOYAN THICK LETTER SELECTOR?), superscriptizer (this one can stack, to make 2^2^2), subscriptizer (same), strikethough (also stacks, to get, like, ¥ (bad example, but if you imagine a double-crossed out letter)), underline (distinct from underscore) (stacks), overline (distinct from overscore/macron(?)) (stacks), sans-serif, monospace, blackletter (including the variation selector for the style of black letter fraktur versus round hand I think), small caps izer. big smalls izer? (probably not). double-struckizer / blackboard bold. Cursivizer? slab serif izer? Swashizer?
 
 text is assumed to be written in Roman (non-italic, non-bold, etc) in a traditional serif font. There is no way to explicitly request this because 1 these are combining marks not variation selectors 2 are you crazy this is just what text is; pick a different font if yours doesn't work right.
 
-It's clear that some of these can compose (bold+italic, for example), but for some of them it is not so clear (italic+italic). So, guidence should probably be given about this.
+It's clear that some of these can compose (bold+italic, for example), but for some of them it is not so clear (italic+italic). So, guidence should probably be given about this. Actually they should probably all arbitrarily combine.
 
 Turnedizer (upsidedownizer). Possibly conflicts with / just is egyptian rotational controls?
 
@@ -115,7 +119,7 @@ Should I map var selector 256 to 0? Seems like a crazy idea, but more attractive
 
 interlinear annotation characters
 
-egyptian heiroglyph format controls
+egyptian heiroglyph format controls (or use generalized rotation controls instead?)
 
 the sound a bell makes
 
@@ -144,7 +148,7 @@ Some care has been taken in carpogram to avoid being sadistically incompatible w
 Possibly include a tag that is not begin language but rather begin transliteration, and this allows for other scripts in carpogram. This seems bad, however, in that it seems like a multibyte encoding, and indeed a multi-byte encoding smuggled in. So probably won't do this.
 
 ## How to work with Carpogram
-Like all realistic text-encodings (such as unicode, in contrast to ASCII, which encodes a fantasy text encoding where people use a small subset of text), care must be taken when processing carpogram. In particular, despite being a "single-byte" encoding, many of the bytes are modifiers, which must be considered to determine the semantic meaning of the text. This is often largely dependent on the context in which you are writting an application. If writing a program to add numbers, zero and slashed zero should be accounted the same. If writing a program to display text, they should be accounted differently. If writing a program to search through text, they should be accounted the same unless strict matching is enabled (but this itself is a UX (user experience) choice.
+Like all realistic text-encodings (such as unicode, in contrast to ASCII, which encodes a fantasy text encoding where people use a small subset of text), care must be taken when processing carpogram. In particular, despite being a "single-byte" encoding, many of the bytes are modifiers, which must be considered to determine the semantic meaning of the text. This is often largely dependent on the context in which you are writting an application. If writing a program to add numbers, zero and slashed zero should be accounted the same. If writing a program to display text, they should be accounted differently. If writing a program to search through text, they should be accounted the same unless strict matching is enabled (but this itself is a UX (user experience) choice). See "text equivalence choices".
 
 Internally, carpogram has some interesting rules for combining characters. Carpogram (inspired by unicode in many ways, but what isn't these days?) has a series of codepoints (in carpogram, a codepoint is a byte is an octet (of bits)) which sometimes combine, to create what you might call a "grapheme cluster". (This is what the end-user might think of as a "character". I think we avoid calling them "characters" ourselves in case this would confuse programmers who think every codepoint is a character.)
 
@@ -178,3 +182,20 @@ TODO: how do I summon the begin/language tag, and the end tag? I have a lot of c
 There are two answers to this question. If you just want running text in a book-like style, carpogram is in fact optimised for that. That's, in a way, what it was made for.
 
 If you want heirarchical text relations like sections and headings, and aren't happy with something like writing `1.1.1.1 My section`, then you are out of luck, and must use an actual markup language to do this. So too if you want funny (rich) text formatting like color (todo: could I include a mechanism for rubricated or colored text, possibly using the tag characters?), or hypertext features. You also cannot control stuff like justification, margins, etc, in carpogram. if you would like to do this, may I recommend the software open office writer? perhaps use gutenberg's movable type machine?
+
+## Text equivalence choices
+
+There are a number of ways you can consider carpogram texts "equivalent", based on your purposes. Here are some of the most important ones:
+
+• Full codepoint sequence comparison: all codepoint sequences that are distinct produce distinct texts. Note that this has some counterintuitive results, like how bold italic is now different from italic bold.
+  ◦ Techincally your application could also consider what happens if, somehow, you have non-carpogram-codepoints in the input stream, like if each codepoint is encoded in 16-bit records and a record with no corresponding carpogram codepoint is read in. You could choose to ignore or consider those. But that is beyond the scope of this document.
+• Full effect comparison: all codepoints are considered, as above, but the order of attribute specifications does not matter. A bold italic k is now considered equivalent to an italic bold k. Similarly, the order of diacritics that do not interfere (ie, both are applied to the base letter, not to each other) does not matter. **This is the recommended mode for most carpogram applications, like presentation and precise matching.**
+• As above, but ignoring variation selectors.
+• As above, but ignoring attribute modifiers EXCEPT capitalization, which is still respected.
+• As above, but ignoring attribute modifiers INCLUDING capitalization, which is now ignored. **This is the recommended mode for when the meaning of the text is important, such as in commanding a computer system, as most people consider eg case and attribute variants of a word to be "the same word"**
+• As above, but with diacritical marks also ignored. This is useful for allowing english users to search for foreign terms, etc.
+
+
+## Does carpogram accommodate the turkish dotless i? (ı)
+No. The turkish dotless i requires an additional character, ı, which is not found in carpogram. Even worse, it changes the meaning of what a capital i is from I to İ. The capitalizer in carpogram does not accommodate this; the capitalizer always maps i to I.
+So, how might turkish people write missives in carpogram? My recommended solution is that they use a normal i for what they would use the dotless i for; this will capitalize correctly to I. Then, for what they would use a dotted i for, they use i̇, an i with an extra combining dot (it is unlikely, as of 2025, that the preceding sequence of unicode characters has displayed correctly on your system); this will capitalize correctly to İ. When i is given a diacritic, it usually has its native dot (which is sometimes called a tittle) replaced with whatever the new diacritic is; obviously, this cannot be done in the case of the extra-dotted i — instead, the extra dot must be placed above the tittle. (The same goes for j, although I don't know of any call for an extra-dotted j). Care must also be taken to make this technically distinguishable (even if in practice nearly identical) from an i with a colon diacritic. Different spacing of the two should be sufficient.
