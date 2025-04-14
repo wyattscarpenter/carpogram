@@ -83,6 +83,8 @@ oh yeah, also, There are only lower case base letters and then there's a combini
 
 Probably no drop-caps or illuminated letters.
 
+to make a text look like a typewriter or how computer code listings are often printed, it should be monospace and slab serif. Todo: should this actually be its own attribute? after all you can imagine a transformation on times new Roman that is monospace and slab serif but doesn't look like typewriter. To make typewriter you would have to switch fonts. which I suppose is ultimately be job of the rich text layer. or should it be?
+
 Unclear to me yet if underscore = macron below or if underscore = low line. Same for overscore(?) = macron or overscore = overline. Also not clear to me what I will do for macrons or ties over two characters (maybe something like U+FE2D COMBINING CONJOINING MACRON BELOW?). Actually, this is settled by the fact that unicode considers U+005F, the underscore, to be a low line, putting it in congruence with their combining low line diacritic. I guess overline would just be x_(over-combiner)
 
 If feeling greedy: greek letters, possibly cyrillic, possibly allow people to typeset music in carpogram. Tables seem possible, but like too much comeon ha ha that's rich text there.
@@ -115,7 +117,7 @@ var selector for z with stroke (does this make a problem given that ƶ is a dist
 
 var selector for double-bar & single-bar dollar sign?
 
-Should I map var selector 256 to 0? Seems like a crazy idea, but more attractive if you consider that VS1 is often used for a common variant form of the glyph, leaving the most common variant with no explicit specifier (unless I want to lay down the law here and say "NO. YOU'RE NEVER ALLOWED TO USE THAT VARIANT IN YOUR FONT UNLESS IT'S SPECIFICALLY REQUESTED"). Also that to match unicode currently the 0x00 byte would map to VS1 and the 0xFF byte to VS256, which is a bit annoying. Anyway I guess I'm not really "mapping" so much as "declaring a new variation selector VS0.
+Should I map var selector 256 to 0? Seems like a crazy idea, but more attractive if you consider that VS1 is often used for a common variant form of the glyph, leaving the most common variant with no explicit specifier (unless I want to lay down the law here and say "NO. YOU'RE NEVER ALLOWED TO USE THAT VARIANT IN YOUR FONT UNLESS IT'S SPECIFICALLY REQUESTED"). Also that to match unicode currently the 0x00 byte would map to VS1 and the 0xFF byte to VS256, which is a bit annoying. Anyway I guess I'm not really "mapping" so much as "declaring a new variation selector VS0, and saying that it's like Unicode's variation selector 256".
 
 interlinear annotation characters
 
@@ -192,7 +194,7 @@ There are a number of ways you can consider carpogram texts "equivalent", based 
 • Full effect comparison: all codepoints are considered, as above, but the order of attribute specifications does not matter. A bold italic k is now considered equivalent to an italic bold k. Similarly, the order of diacritics that do not interfere (ie, both are applied to the base letter, not to each other) does not matter. **This is the recommended mode for most carpogram applications, like presentation and precise matching.**
 • As above, but ignoring variation selectors.
 • As above, but ignoring attribute modifiers EXCEPT capitalization, which is still respected.
-• As above, but ignoring attribute modifiers INCLUDING capitalization, which is now ignored. **This is the recommended mode for when the meaning of the text is important, such as in commanding a computer system, as most people consider eg case and attribute variants of a word to be "the same word"**
+• As above, but ignoring attribute modifiers INCLUDING capitalization, which is now ignored. **This is the recommended mode for when the meaning of the text is important, such as in commanding a computer system, as most people consider eg case and attribute variants of a word to be "the same word".** (Note that you presumably do not want word2 and word² to be the same, if the second one is simply a footnote marker, so separate footnote markers from the words they mark using a narrow space or something probably. Or use a different form of matching.) This form of equality is so useful that it has its own name, "Roman equivalence", and its own symbol (≈ with ʀᴏᴍᴀɴ above); "roman" because that's what text that isn't italic, bold, etc is called, and also because the Roman's Latin alphabet was a unicameral.
 • As above, but with diacritical marks also ignored. This is useful for allowing english users to search for foreign terms, etc.
 
 
