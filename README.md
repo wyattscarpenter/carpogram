@@ -3,6 +3,8 @@ a text encoding
 
 ## random notes
 
+This is a good reference to pick up the actually useful characters of Unicode 256: https://mrinitialman.com/TestSite/HTMLBook/Chapters/Appendices/Appendices-Characters.html (those characters which are not directly encoded should have some story of being encoded, using composition.
+
 I am still working on carpogram. You can't even slightly use it in theory right now, but you might find some of the ideas described in this document interesting (although most people don't find this topic very interesting in general, and it will be no more interesting than that). As such, there isn't even a version number for carpogram yet, and I make random incompatible changes to it all the time. (When there is a version number, it will probably just go 1, 2, 3, etc, and be backwards compatible forever.)
 
 If you are interested in implementing carpogram, let me know. Your experiences implementing a prototype could provide invaluable feedback.
