@@ -19,7 +19,15 @@ Frankenstein: utf-8 but the first 256 codepoints of Unicode are replaced with th
 Wolfman: the codepoint-encoding scheme of utf-8, but the codepoints encoded are carpogram. this is the only encoding that can accommodate a hypothetical future where a future version of carpogram adds more codepoints.
 (unnamed potential encoding): there might be something better than UTF-8, given that we can abandon its constraints, and given that it has a known problem of overlong encodings being possible. The solution should still be self-synchronizing, but I'm not sure how easy that is or easy to mess up it might be, and I haven't thought about this problem for very long.
 
-This does suggest that maybe the file extensions should be .dracula_carpogram, etc. maybe with a hyphen. and also for the mine types.
+I'm thinking I will revise the above provisional encodings to, instead: Xenophon which is 1-byte; and Dracula that is utf-8 with u+0–u+ff modified. If I develop a taste for quixotic quests, I can allocate more code points, and possibly eventually develop another encoding along the same lines. Possibly getting rid of deprecated Unicode codepoints in the process.
+
+Xenophon is named after the ancient greek Xenophon, author of the Anabasis, a story about a guy coincidentally also named Xenophon.
+
+Note that in Xenophon there is no right-to-left text (should I add this?) so you don't have to worry about that. In dracula 
+
+This does suggest that maybe the file extensions should be .dracula_carpogram, etc. maybe with a hyphen. and also for the mime types.
+
+the symbol codepoints should line up with ASCII mostly and should match the digits on the keyboard (so the byte for ! ends in 1, etc)
 
 There is no "magic number" to indicate a carpogram stream. I'm afraid such methods are generally unreliable and also unfollowed and also unefficient and also on streamable, so you must simply preserve the metadata of what your file is in some other standard way. This is a problem for a different part of the computer system, not text encoding.
 
