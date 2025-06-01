@@ -8,6 +8,8 @@ If you are interested in implementing carpogram, let me know. Your experiences i
 
 ## random notes
 
+due to carpogram's particular conception of plain text features, I was forced to consider what the "emoji" style is supposed to mean. I thought it was intractable, considering that the Unicode materials mention it as being large, colorful, and possibly animated. the latter two I reject as plaintext, and the former i don't really endorse as a description. (It is also paradoxical that they call the opposite of emoji text, given it the whole point of emoji is to be textual characters, but that's neither here nor there.) they also say "whimsical", which is something, but not very specific. However, it occurred to me that the word "cartoon" applies. the emoji characters are illustrated in cartoon. that resolves it.
+
 This is a good reference to pick up the actually useful characters of Unicode 256: https://mrinitialman.com/TestSite/HTMLBook/Chapters/Appendices/Appendices-Characters.html (those characters which are not directly encoded and aren't control characters I'm abandoning should have some story of being encoded, using composition.) (it's also possible that I should adopt some of these control characters).
 
 Variation selectors for certain serbian and masadonian italic letters? https://jankojs.tripod.com/SerbianCyr.htm (I probably won't actually have cyrillic in carpogram anyway.) actually the Wikipedia page on this has a lot of detail. I would ideally want an expert to tell me which ones to put in, though.
