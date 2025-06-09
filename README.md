@@ -10,6 +10,8 @@ If you are interested in implementing carpogram, let me know. Your experiences i
 
 There are no double-prime, double-quote, double-guillmet, double-equal-sign nor double-em-dash characters in carpogram, etc. Just the single version of all of these, which you can then double up the normal way. So, ′′ ‘‘ ‹‹ == and ——. Much like _ and ⎯ (U+23AF Horizontal Line Extension), — is defined to run together if you use it multiple times, in order to allow for the famous 2-em and 3-m dashes so useful to authors of semi-anonymous letters.
 
+It's not clear to me if there should be a page break character, but if so it should probably be canonically equivalent to ascii formfeed (0xC). Although mine would have a different code point.
+
 I'm not sure if the quotation bar is the same as the em dash in carpogram.
 
 I'm not going to add a lot of space characters to carpogram (see also: repeated marks when one can), but I'm also definitely not going to add an em quad, since apparently that was added in by mistake it seems.
