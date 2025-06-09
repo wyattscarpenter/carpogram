@@ -8,6 +8,12 @@ If you are interested in implementing carpogram, let me know. Your experiences i
 
 ## random notes
 
+There are no double-prime, double-quote, double-guillmet, double-equal-sign nor double-em-dash characters in carpogram, etc. Just the single version of all of these, which you can then double up the normal way. So, ′′ ‘‘ ‹‹ == and ——. Much like _ and ⎯ (U+23AF Horizontal Line Extension), — is defined to run together if you use it multiple times, in order to allow for the famous 2-em and 3-m dashes so useful to authors of semi-anonymous letters.
+
+I'm not sure if the quotation bar is the same as the em dash in carpogram.
+
+I'm not going to add a lot of space characters to carpogram (see also: repeated marks when one can), but I'm also definitely not going to add an em quad, since apparently that was added in by mistake it seems.
+
 To be honest, I'm not completely convinced ß is its own letter and not just a long-s tailed-z ligature, no matter what the Germans think. Which raises the question again of how to deal with æ and œ and also ꜵ (and ꜹ and ꜷ and Ꜹ and Ꜷ?) and ĳ for that matter. Mayhaps I could use the stick-em-together operator and then a VS? On the other hand, these are proper letters in some languages, and I guess you have to admit that ligatures can eventually spawn new proper letters, or w is also out, for example. On the other other hand if you think about it privileging this as a letter is actually just as biased against everyone who was using it as a ligature, ie to write encyclopædia — unless you want to say the ligatures are a font matter and the correct spelling of this (spelling of this) word in English is encyclopaedia, or alternatively again if you want to claim that English was actually still using the æsch letter all along and it's simply synonymous in value with some other things, rendering the whole dispute moot. Maybe you should just go with "whatever printing presses would do". On the other hand then you have to support ﬁ ligature, and no one wants that.
 
 blockquote bar that looks a bit like | but is for blockquoting a paragraph. (Should I just use | instead? Could be reasonable. Looks a bit bad though, and is not semantically distinct, for whatever that's worth.
