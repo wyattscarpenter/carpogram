@@ -10,6 +10,8 @@ If you are interested in implementing carpogram, let me know. Your experiences i
 
 irony mark is the CPNB proposal 2007, a slightly kinked exclamation mark
 
+unlike Unicode, which is as complicated as human language and also a lot of technical tech, carpogram hopes to be only as incredibly complicated as human language.
+
 There are no double-prime, double-quote, double-guillmet, double-equal-sign nor double-em-dash characters in carpogram, etc. Just the single version of all of these, which you can then double up the normal way. So, ′′ ‘‘ ‹‹ == and ——. Much like _ and ⎯ (U+23AF Horizontal Line Extension), — is defined to run together if you use it multiple times, in order to allow for the famous 2-em and 3-m dashes so useful to authors of semi-anonymous letters.
 
 vs for long s? vs for “ that is turned ” vs mirrored ” (so to speak)? vs for ampersand &, 3| and Et?
