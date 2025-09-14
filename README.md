@@ -8,6 +8,8 @@ If you are interested in implementing carpogram, let me know. Your experiences i
 
 ## random notes
 
+if I'm being brutally honest, and not just making a joke that it's lambda, A without a crossbar should probably be a VS. actually, maybe I just leave that to fonts.
+
 I have recently learned that a carpogram is actually something already. "The carpogram is a simple radiographic technique that allows to visualize all the bones of the hand, wrist (carpus) and distal portion of the forearm (radioulnar)." —https://medicosdoc.com/en/oferta-detalle/carpograma-barranquilla/2374 should i rename this project to something else? idk it's probably fine. I also have a hunch, based on the sources in which this term appears, that this is actually just a Spanish term, carpograma, which is being calqued to carpogram. So it may be something of an idiosyncratic translation quirk and not be a word in wide currency otherwise. 
 
 in carpogram, the asterisk and dagger are not superscript by default, they are just regular symbols. This will strike most people as strangely large because they are used to seeing the superscript versions.
