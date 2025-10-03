@@ -1,5 +1,8 @@
 # carpogram
-a text encoding
+
+## Introduction, definitions, and general notes.
+
+Carpogram is an enumeration of elements that can be used to represent text in an information system such as a computer. This this generally known as a "character set" — although, unlike a mathematical set, the order is quite important. (TODO: continue explaining how it also has encodings, and all other notes about its ideas about text.)
 
 ## disclaimer and call to action
 I am still working on carpogram. You can't even slightly use it right now, but you might find some of the ideas described in this document interesting (although most people don't find this topic very interesting in general, and it will be no more interesting than that!). As such, there isn't even a version number for carpogram yet, and I make random incompatible changes to it all the time. (When there is a version number, it will probably just go 1, 2, 3, etc, and be backwards compatible forever.)
