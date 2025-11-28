@@ -15,7 +15,73 @@ If you are interested in implementing carpogram, let me know. Your experiences i
 
 ## random notes
 
-if I'm being brutally honest, and not just making a joke that it's lambda (Λ), A without a crossbar should probably be a VS. actually, maybe I just leave that to fonts.
+if I'm being brutally honest, and not just making a joke that it's lambda (Λ), A without a crossbar should probably be a VS. actually, maybe I just leave that to fonts. Maybe also so for the type of “ that has the heavy part on the bottom vs the top. Possibly even the same with the "wrong way" apostrophe ‘ that people use from time to time as a mistake.
+
+Unicode is bad in that only publish the charts so even determining what a character even is supposed to be, actually, just from a picture, some properties, and a little bit of text, is sometimes pretty hard. I hope carpogram will fix this.
+
+At the same time, carpogram is probably going to be less like "expert research projects" and more like "standard you pay money to get your codepoints into"; purely out of necessity, we must rely on private actors to figure out some of the details for us. And, hopefully, this incentivizes people correctly to put good and useful characters in there. Also, those people will know what those characters are, and can explain them.
+
+I'm not really sure what, if any, "properties" the characters will have. I've always been dubious of those because a punctuation character can sometimes be a letter or vice-versa. On the other hand, I see why they provide those: programmatic manipulation of text is the whole point of encoding text, after all.
+
+I am not sure if carpogram should support soft-hyphens or what. I guess it couldn't hurt. It seems like soft-hyphenation and right-to-level text will have to be controlled explicitly in order to avoid unfortunate accidents of the sort that are fairly common. This will allow us to have just one system, albeit a little inconvenient one. If we already have the rubi characters, eg, then I think this is also fairly natural.
+
+Need to rigorously treat the levels of arbitrary-length strings of: bits, codepoints, and characters (maybe more things). At some point. Probably after I figure out self-synchronizing codes. From each layer of n elements we create a new set of m elements, for any n and m. Isn't that something?
+
+{ Intercal interlude. I use the squig bracket here because markdown was designed by people who don't really understand text, so it's completely impossible for me to use block quotes correctly otherwise while still grouping everything together right.
+
+It would be sort of funny to encode the ascii double-quote into carpogram to support Intercal and call it “rabbit-ears”, but this would be ruinous. Anyway, we no more support Intercal than we support APL, nor other feverish dreams of various computing systems.
+
+Intercal allegedly also has a rabbit character (period with straight double quote above it) named rabbit, a V with a line through it named bookworm, and a blotch named blotch, which apparently do not exist in unicode, according to https://www.muppetlabs.com/~breadbox/intercal-man/tonsila.html. These are mysterious to me, except for the comment in http://catb.org/~esr/intercal/ick.htm#Grouping-Rules
+
+> One final comment about sparks and rabbit-ears; if the next character in the program is a spot, as often happens because onespot variables are common choices for operands, a spark and the following spot can be combined into a wow (!). Unfortunately, the rabbit-ear/spot combination has no one-character equivalent in any of the character sets that C-INTERCAL accepts as input (UTF-8, Latin-1, and ASCII-7) as none of these contain the rabbit character, although the Hollerith input format that CLC-INTERCAL can use does."
+
+(?!)
+
+And this paragraph from "Tonsil B: Notes On The Atari Implementation" https://3e8.org/pub/intercal.pdf#page=21
+
+> The Atari implementation of INTERCAL differs from the original Princeton version primarily in the use of
+ASCII rather than EBCDIC. Since there is no “change” sign (c/) in ASCII, we have substituted the “big
+money” ($) as the mingle operator. We feel that this correctly represents the increasing cost of software in
+relation to hardware. (Consider that in 1970 one could get RUNOFF for free, to run on a $20K machine,
+whereas today a not quite as powerful formatter costs $99 and runs on a $75 machine.) We also feel that there
+should be no defensible contention that INTERCAL has any sense. Also, since overpunches are difficult to
+read on the average VDT, the exclusive-or operator may be written ?. This correctly expresses the average
+person’s reaction on first encountering exclusive-or, especially on a PDP-11. Note that in both of these
+cases, the over-punched symbol may also be used if one is masochistic, or concerned with portability to the
+Princeton compiler. The correct over-punch for “change” is “c〈backspace〉/” and the correct over-punch
+for V- is ”V〈backspace〉-”. These codes will be properly printed if you have a proper printer, and the
+corresponding EBCDIC code will be produced by the /IBM option on the LIST command.
+
+see also, this explanation of what "Atari syntax" is: http://catb.org/~esr/intercal/ick.htm#Princeton-and-Atari-Syntax. If the rabbit character is also an overpunch, it's odd that they don't mention it. (I think maybe blotch is a million things overpunched, or at least brackets and asterisk and maybe #, as a joke?).
+
+But maybe it's some kind of ebcidc character (I'm not 100% sure what an overpunch is or if it counts as a "character), given this paragraph from the same source https://3e8.org/pub/intercal.pdf#page=7 :
+
+> Combining a rabbit-ears with a spot to form a rabbit (".) is not permitted, although the programmer is
+free to use it should he find an EBCDIC reader which will properly translate a 12-3-7-8 punch
+
+(where this actually is a straight quote mark directly over the period, in the pdf)
+
+Or perhaps that's a joke about how that character doesn't exist in ebcdic.
+
+Allegedly there were a huge number of ebcdic codepages, which is weird. To quote https://en.wikipedia.org/wiki/EBCDIC
+
+> There are hundreds of EBCDIC code pages based on the original EBCDIC character encoding; there are a variety of EBCDIC code pages intended for use in different parts of the world, including code pages for non-Latin scripts such as Chinese, Japanese (e.g., EBCDIC 930, JEF, and KEIS), Korean, and Greek (EBCDIC 875). There is also a huge number of variations with the letters swapped around for no discernible reason.[citation needed]
+
+Which I think is amusing.
+
+https://en.wikipedia.org/wiki/Code_page#EBCDIC-based_code_pages does indeed list a large number of code pages.
+
+} End of intercal interlude
+
+Note various ways an automatic conversion from Unicode to carpogram is not possible:
+* No straight quote. If you have a " in a Unicode document, this must be converted to the appropriate “ or ” character based on context (or, perhaps, maybe even some other symbol, based on the intent of the author, like a double prime or gershayim).
+* The straight ' character in ascii and the right single quote mark are often used ambiguously (or even incorrectly) and must be converted to the correct carpogram character (if you simply convert all ' to apostrophes and ’ to closing single quotes, you will get the wrong result). On that note, many systems butcher user input and turn leading apostrophes into opening single quotes; this should also be corrected Based on context — unless you are trying to make fun of that person.
+* The diariesis and the umlaut are not the same character in carpogram, Even though they typically are in Unicode and cannot be distinguished there except with tricks that nobody uses that aren't even standard.
+* The period in abbreviations must be converted to an abbreviation point instead of a period.
+* The ascii asterisk is probably equivalent to a superscript asterisk in carpogram, same for the dagger used for footnotes and the double dagger etc; but you should verify this is what was intended if feasible.
+* There is no hyphen-minus in carpogram. You must use the appropriate character instead, which is probably a hyphen or a minus but also could be several other types of dashes or similar looking characters if we're being real. This is probably the most striking example of carpogram’s allegiance to real text over electronic text, because the hyphen-minus is so common.
+* In general, a lack of extended characters, for which I suppose some gaiji system must needs be used or something. The only reason I do not have these is that I lack the resources to. Ideally I would encode all of human language, but not even the Unicode consortium has done that and they have many people working on it.
+  * I guess a serious attempt at encoding all of text would also include all of the weird digital mistake punctuation marks like straight double quote. So, eventually, this project would turn me into a superset of Unicode. Womp-womp.
 
 there is a category of metatextual pseudocharacters that I should discuss, which are (roughly) glyphs that appear in text that do not make sense to include in a text encoded. for example, to minimize ambiguity, the "hyphen" that breaks a word over lines should look distinct from a hyphen used in text, and because plain text is supposed to be reflowable (this is an implication of its other properties), It wouldn't make any sense for us to encode it; that would simply allow you to include it in the text in an incorrect place this creating ambiguity. I'm not sure if the same logic applies to the end of text tombstone, or if you could legitimately use that multiple times if you had multiple articles in the same text document or something, like an entire magazine as one txt — I guess you probably could, so that doesn't apply. many people think you can't encode a horizontal rule in a text encoding, but I think you can; the same logic about linebreak hyphens doesn't apply there. the external-link arrowbox glyph is also like this, as the current Unicode consortium has ruled: they are automatically generated by the software for document display (in hypertext, even), and it would not be helpful (or even really make sense) to be able to manually insert them.
 
