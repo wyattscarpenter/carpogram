@@ -2,7 +2,11 @@
 
 ## Introduction, definitions, and general notes.
 
-Carpogram is an enumeration of elements that can be used to represent text in an information system such as a computer. This this generally known as a "character set" — although, unlike a mathematical set, the order is quite important. (TODO: continue explaining how it also has encodings, and all other notes about its ideas about text.)
+Carpogram is an enumeration of elements that can be used to represent text in an information system such as a computer. This is what's generally known as a "character set" — although, unlike a mathematical set, the order is quite important. That order is what we use to encode the elements in a computer! The encoding of Carpogram into bytes is detailed in [encoding.md](encoding.md).
+
+TODO: explain here or elsewhere its ideas about text.
+
+As I'm writing this document it is in UTF-8, not Carpogram. It is also in markdown, a markup format that produces rich text.
 
 ## motivation
 
@@ -127,23 +131,9 @@ probably you should be able to have arbitrary text attribute combinations, and y
 
 possibly a mistake to conflate chinese/han gothic/grass distinction with Latin San serif. But what if I were to refer to this as "unifying" them. Now we're talking.
 
-Carpogram is an enumeration of textual codepoints (discrete pieces of information in a computer system that are used to represent text). Carpogram can be used in three different realizations: Dracula, Frankenstein, and Wolfman. Again let me stress that all of these are incompatible with regular Unicode and ASCII, despite the similarities I'm about to discuss.
-Dracula: the simplest and oldest carpogram encoding. one byte (one octet) is one codepoint. there are 256 codepoints.
-Frankenstein: utf-8 but the first 256 codepoints of Unicode are replaced with the first 256 codepoints of Carpogram. This also means there are more canonical equivalences, including for surprising things such as variation selectors, and a precise map of them could be developed for Unicode-processing programs to use to adapt to Frankenstein. The first 256 codepoints of Unicode are mostly wasted on control characters anyway, so having carpogram there instead (almost a straight upgrade) is a huge boon. The main benefit of Frankenstein is being able to encode other languages, like Chinese, which are involved enough that the carpogram autocrat (me) would never independently figure out a good way to accommodate them (due to lack of expertise, spare time, etc).
-Wolfman: the codepoint-encoding scheme of utf-8, but the codepoints encoded are carpogram. this is the only encoding that can accommodate a hypothetical future where a future version of carpogram adds more codepoints.
-(unnamed potential encoding): there might be something better than UTF-8, given that we can abandon its constraints, and given that it has a known problem of overlong encodings being possible. The solution should still be self-synchronizing, but I'm not sure how easy that is or easy to mess up it might be, and I haven't thought about this problem for very long.
-
-I'm thinking I will revise the above provisional encodings to, instead: Xenophon which is 1-byte; and Dracula that is utf-8 with u+0–u+ff modified. If I develop a taste for quixotic quests, I can allocate more code points, and possibly eventually develop another encoding along the same lines. Possibly getting rid of deprecated Unicode codepoints in the process.
-
-Xenophon is named after the ancient greek Xenophon, author of the Anabasis, a story about a guy coincidentally also named Xenophon.
-
-Note that in Xenophon there is no right-to-left text (should I add this?) so you don't have to worry about that. In dracula 
-
-This does suggest that maybe the file extensions should be .dracula_carpogram, etc. maybe with a hyphen. and also for the mime types.
-
 the symbol codepoints should line up with ASCII mostly and should match the digits on the keyboard (so the byte for ! ends in 1, etc)
 
-There is no "magic number" to indicate a carpogram stream. I'm afraid such methods are generally unreliable and also unfollowed and also unefficient and also on streamable, so you must simply preserve the metadata of what your file is in some other standard way. This is a problem for a different part of the computer system, not text encoding.
+There is no "magic number" to indicate a carpogram stream. I'm afraid such methods are generally unreliable and also unfollowed and also inefficient and also unstreamable, so you must simply preserve the metadata of what your file is in some other standard way. This is a problem for a different part of the computer system, not text encoding.
 
 possibly include the left comma and straight comma? perhaps also the Chinese list comma (diagonal comma? backslash comma?). Could also include the right colon but idk the normal space+colon kind of does that alright already though.
 
