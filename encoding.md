@@ -32,6 +32,15 @@ error correction?
 
 substring seaching?
 
+sort order via bytes sort order
+
+To quote https://research.swtch.com/utf8
+
+> UTF-8 sequences sort in code point order.
+> You can verify this by inspecting the encodings in the table above. This means that Unix tools like join, ls, and sort (without options) don't need to handle UTF-8 specially. 
+
+Inspect/concoct examples to think about this.
+
 ### Our own encoding?
 
 infinity code points
