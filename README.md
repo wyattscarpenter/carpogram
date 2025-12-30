@@ -19,6 +19,8 @@ If you are interested in implementing carpogram, let me know. Your experiences i
 
 ## random notes
 
+for extradiagetic linebreak hyphens, maybe the ideal form is like a double-notched oblique hyphen. Just if I had a fairly blank (but not entirely blank) canvas to work from.
+
 if I'm being brutally honest, and not just making a joke that it's lambda (Λ), A without a crossbar should probably be a VS. actually, maybe I just leave that to fonts. Maybe also so for the type of “ that has the heavy part on the bottom vs the top. Possibly even the same with the "wrong way" apostrophe ‘ that people use from time to time as a mistake.
 
 Unicode is bad in that only publish the charts so even determining what a character even is supposed to be, actually, just from a picture, some properties, and a little bit of text, is sometimes pretty hard. I hope carpogram will fix this.
@@ -82,7 +84,7 @@ Note various ways an automatic conversion from Unicode to carpogram is not possi
 * The straight ' character in ascii and the right single quote mark are often used ambiguously (or even incorrectly) and must be converted to the correct carpogram character (if you simply convert all ' to apostrophes and ’ to closing single quotes, you will get the wrong result). On that note, many systems butcher user input and turn leading apostrophes into opening single quotes; this should also be corrected Based on context — unless you are trying to make fun of that person.
 * The diariesis and the umlaut are not the same character in carpogram, Even though they typically are in Unicode and cannot be distinguished there except with tricks that nobody uses that aren't even standard.
 * The period in abbreviations must be converted to an abbreviation point instead of a period.
-* The ascii asterisk is probably equivalent to a superscript asterisk in carpogram, same for the dagger used for footnotes and the double dagger etc; but you should verify this is what was intended if feasible. A carpogram asterisk is probably equivalent to a unicode ✱ heavy asterisk.
+* The ascii asterisk is probably equivalent to a superscript asterisk in carpogram, same for the dagger used for footnotes and the double dagger etc; but you should verify this is what was intended if feasible. A carpogram asterisk is probably equivalent to a unicode ✱ heavy asterisk. (actually there is a closer symbol, one of the other large asterisk variants)
 * There is no hyphen-minus in carpogram. You must use the appropriate character instead, which is probably a hyphen or a minus but also could be several other types of dashes or similar looking characters if we're being real. This is probably the most striking example of carpogram’s allegiance to real text over electronic text, because the hyphen-minus is so common.
 * In general, a lack of extended characters, for which I suppose some gaiji system must needs be used or something. The only reason I do not have these is that I lack the resources to. Ideally I would encode all of human language, but not even the Unicode consortium has done that and they have many people working on it.
   * I guess a serious attempt at encoding all of text would also include all of the weird digital mistake punctuation marks like straight double quote. So, eventually, this project would turn me into a superset of Unicode. Womp-womp.
